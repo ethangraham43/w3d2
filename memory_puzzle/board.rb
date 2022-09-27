@@ -1,17 +1,17 @@
 require "byebug"
 
-class Board
-    def self.random_cards
-        alpha=("a".."z").to_a
-        shuffle_l=alpha.shuffle
-        eight_letters=[]
-        shuffle_l.each_with_index do |ele,idx|
-            if idx<8   
-                eight_letters<<ele
-            end
-        end
-        eight_letters
-    end
+# class Board
+#     def self.random_cards
+#         alpha=("a".."z").to_a
+#         shuffle_l=alpha.shuffle
+#         eight_letters=[]
+#         shuffle_l.each_with_index do |ele,idx|
+#             if idx<8   
+#                 eight_letters<<ele
+#             end
+#         end
+#         eight_letters
+#     end
     
     def initialize
         @grid = Array.new(4) {Array.new(4)}
@@ -21,22 +21,7 @@ class Board
         @letters=Board::random_cards
     end
  
-    # def place_random_ships
-    #     length=@grid.length
     
-    #     reduced=@size*0.25
-    #     i=0
-    #     while i<reduced
-            
-    #         row=rand(0...length)
-    #         col=rand(0...length)
-    #         if self[[row,col]]!=:S
-    #         self[[row,col]]=:S
-    #         i+=1
-    #         end
-    #     end
-    # end
-
     def populate
         idx=0
         j=0
