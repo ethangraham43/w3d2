@@ -6,11 +6,11 @@ class Card
         @face_up = false
     end
 
-    def hide
+    def hide?
         @face_up = false
     end
 
-    def reveal(arg)
+    def reveal?(arg)
         @face_up = true
     end
 
