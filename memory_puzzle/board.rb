@@ -36,6 +36,13 @@ class Board
         @cards.all? {|card| card.reveal}
     end
 
+    def reveal(guessed_pos)
+        if !@grid[guessed_pos].reveal?
+            @grid[guessed_pos].card_value
+        end
+    end
+
+
 
 end
 
