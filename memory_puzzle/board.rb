@@ -5,18 +5,23 @@ class Board
     def initialize
         @grid = Array.new(4) {Array.new(4)}
         @card = Card.new
-        @cards=[:A, :B, :C, :D, :E, :F, :G, :H, :A, :B, :C, :D, :E, :F, :G, :H]
+        # @cards=[:A, :B, :C, :D, :E, :F, :G, :H, :A, :B, :C, :D, :E, :F, :G, :H]
+        cards = []
         @size=@grid.length*@grid.length
 
     end
 
 
     def populate
+        letters = ("a".."z").to_a.shuffle
         i = 0
+        pairs = Hash.new(0)
         while i < @size
             row = rand(0..3)
             col = rand(0..3)
             if @grid[row][col] == nil
+                rand_idx = letters[]
+
                 @grid[row][col] = @cards[i]
                 i += 1
             end
