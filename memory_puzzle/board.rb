@@ -1,5 +1,6 @@
 require "byebug"
 
+<<<<<<< HEAD
 # class Board
 #     def self.random_cards
 #         alpha=("a".."z").to_a
@@ -12,37 +13,35 @@ require "byebug"
 #         end
 #         eight_letters
 #     end
+=======
+class Board
+>>>>>>> 923ebd627b3c45814e706cd2c86f836ed5b090f7
     
     def initialize
         @grid = Array.new(4) {Array.new(4)}
         # @card = Card.new
-        @cards=[]
+        @cards=[:A, :B, :C, :D, :E, :F, :G, :H, :A, :B, :C, :D, :E, :F, :G, :H]
         @size=@grid.length*@grid.length
-        @letters=Board::random_cards
     end
+<<<<<<< HEAD
  
     
+=======
+
+
+>>>>>>> 923ebd627b3c45814e706cd2c86f836ed5b090f7
     def populate
-        idx=0
-        j=0
-        until @cards.length==@size
-            # row=rand(0...@grid.length)
-            # col=rand(0...@grid.length)
-            #  @cards.concat(Board::random_cards)
-             
-            #  @grid[i]=@cards.map do |row|
-            #     sub=[]
-            #     @cards.each_with_index |ele,idx|
-            @cards<<Board::random_cards[idx]
-            if idx!=0 && idx%4==0
-                @grid[idx].concat(@cards)
-                debugger
+        i = 0
+        while i < @size
+            row = rand(0..3)
+            col = rand(0..3)
+            if @grid[row][col] == nil
+                @grid[row][col] = @cards[i]
+                i += 1
             end
-            idx+=1
-
         end
+        @grid
     end
-
 
 end
 

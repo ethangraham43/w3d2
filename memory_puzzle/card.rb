@@ -6,7 +6,7 @@ class Card
         @face_up = false
     end
 
-    def hide?
+    def hide
         @face_up = false
     end
 
@@ -14,7 +14,10 @@ class Card
         @face_up = true
     end
 
-    def ==
-        
+    def ==(card_value1, card_value2)
+        if card_value1 == card_value2
+            return true
+        end
+        false
     end
 end
