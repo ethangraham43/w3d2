@@ -1,3 +1,5 @@
+require_relative "board"
+
 class Card
     attr_reader :card_value
 
